@@ -129,5 +129,7 @@
       }
     }
   },
-  "defaultProject": "SMSChallenge"
+  "cli": {
+    "analytics": false
+  }
 }
