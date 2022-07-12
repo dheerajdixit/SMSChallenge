@@ -11,6 +11,8 @@ import { CounterComponent } from './counter/counter.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { OrderModule } from 'ngx-order-pipe';
+import { NgxFontAwesomeModule } from 'ngx-font-awesome';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     NgxPaginationModule,
     HttpClientModule,
     FormsModule,
+    OrderModule,
+    NgxFontAwesomeModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },

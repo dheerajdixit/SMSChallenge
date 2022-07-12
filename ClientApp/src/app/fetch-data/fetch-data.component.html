@@ -9,28 +9,28 @@
          name="city"
          [(ngModel)]="city"
          (ngModelChange)="Search()"
-         placeholder="Entery City name to search"/>
- 
+         placeholder="Entery City name to search" />
+
 </nav>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cityVisits">
   <thead>
     <tr>
-      <th>City</th>
-      <th>Start Date</th>
-      <th>End Date</th>
-      <th>Price</th>
-      <th>Status</th>
-      <th>Color</th>
+      <th (click)="Sort('city')">City &nbsp; <i class="fa fa-sort"></i></th>
+      <th (click)="Sort('startDate')">Start Date &nbsp;<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('endDate')"> End Date &nbsp;<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('price')"> Price &nbsp;<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('status')">Status &nbsp;<i class="fa fa-sort"></i></th>
+      <th (click)="Sort('color')"> Color &nbsp;<i class="fa fa-sort"></i></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let rec of cityVisits | paginate:{itemsPerPage:5,currentPage:p}">
+    <tr *ngFor="let rec of cityVisits | paginate:{itemsPerPage:10,currentPage:p} |  orderBy: key : reverse ">
       <td>{{ rec.city }}</td>
       <td>{{ rec.startDate }}</td>
       <td>{{ rec.endDate }}</td>
       <td>{{ rec.price }}</td>
       <td>{{ rec.status }}</td>
-      <td  style="background-color:{{ rec.color }}"></td>
+      <td style="background-color:{{ rec.color }}"></td>
     </tr>
   </tbody>
 </table>

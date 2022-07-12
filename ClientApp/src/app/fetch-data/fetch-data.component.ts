@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 
+
 @Component({
   selector: 'app-fetch-data',
   templateUrl: './fetch-data.component.html'
@@ -37,6 +38,14 @@ export class FetchDataComponent implements OnInit {
       })
     }
   }
+
+  key: string = "id"
+  reverse: boolean = false
+  Sort(key: any) {
+    this.key = key
+    this.reverse = !this.reverse
+  }
+
 }
 
 interface CityVisits {
