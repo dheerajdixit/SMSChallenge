@@ -1,0 +1,36 @@
+<h1 id="tableLabel">City Visits</h1>
+
+<p>Fetching City Visits Data from Backend Api</p>
+
+<p *ngIf="!cityVisits"><em>Loading...</em></p>
+<nav class="navbar">
+  <input class="form-control"
+         type="text"
+         name="city"
+         [(ngModel)]="city"
+         (ngModelChange)="Search()"
+         placeholder="Entery City name to search"/>
+ 
+</nav>
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cityVisits">
+  <thead>
+    <tr>
+      <th>City</th>
+      <th>Start Date</th>
+      <th>End Date</th>
+      <th>Price</th>
+      <th>Status</th>
+      <th>Color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let rec of cityVisits">
+      <td>{{ rec.city }}</td>
+      <td>{{ rec.startDate }}</td>
+      <td>{{ rec.endDate }}</td>
+      <td>{{ rec.price }}</td>
+      <td>{{ rec.status }}</td>
+      <td  style="background-color:{{ rec.color }}"></td>
+    </tr>
+  </tbody>
+</table>
