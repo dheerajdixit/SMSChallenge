@@ -7,19 +7,21 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
+import { LoginComponent } from './login/login.component';
 import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { OrderModule } from 'ngx-order-pipe';
 import { NgxFontAwesomeModule } from 'ngx-font-awesome';
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
+    LoginComponent,
     FetchDataComponent
   ],
   imports: [
@@ -30,12 +32,17 @@ import { NgxFontAwesomeModule } from 'ngx-font-awesome';
     FormsModule,
     OrderModule,
     NgxFontAwesomeModule,
+    NgxDaterangepickerMd.forRoot(),
+    AuthModule.forRoot({
+      domain: 'dev-unab7yv8.us.auth0.com',
+      clientId: 'R5lk4TIAghq5OIN89GuKPBBXZUVpPvcU'
+    }),
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'fetch-data', component: FetchDataComponent },
     ])
-  
+
   ],
   providers: [],
   bootstrap: [AppComponent]

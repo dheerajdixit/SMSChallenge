@@ -12,6 +12,8 @@
          placeholder="Entery City name to search" />
 
 </nav>
+<input type="text" ngxDaterangepickerMd
+       [(ngModel)]="selected" placeholder="Choose date" (change)="change($event)" />
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="cityVisits">
   <thead>
     <tr>
