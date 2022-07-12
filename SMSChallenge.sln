@@ -9,6 +9,11 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SMS.Code.Challenge.Common", "..\..\..\Documents\backup\SMS.Code.Challenge.Common\src\SMS.Code.Challenge.Common\SMS.Code.Challenge.Common.csproj", "{F252B61E-9DD2-43C9-8A99-CF0F6DD8D06D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{239E2102-D809-479E-89BE-FFA4043C4357}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Documents\readme.txt = ..\..\..\Documents\readme.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
