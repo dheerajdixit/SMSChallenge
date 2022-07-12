@@ -24,7 +24,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let rec of cityVisits">
+    <tr *ngFor="let rec of cityVisits | paginate:{itemsPerPage:5,currentPage:p}">
       <td>{{ rec.city }}</td>
       <td>{{ rec.startDate }}</td>
       <td>{{ rec.endDate }}</td>
@@ -34,3 +34,4 @@
     </tr>
   </tbody>
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
